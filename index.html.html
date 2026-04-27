@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harish | Digital Marketing Expert</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --card: #16161f;
+    --accent: #ff4d00;
+    --accent2: #ff9a00;
+    --gold: #f5c842;
+    --text: #f0ede8;
+    --muted: #8a8794;
+    --border: rgba(255,255,255,0.07);
+    --nav-h: 70px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--nav-h);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw;
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+  }
+
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    background: linear-gradient(135deg, var(--accent), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  .nav-cta {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff !important;
+    padding: 0.5rem 1.4rem;
+    border-radius: 4px;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  .nav-cta:hover { opacity: 0.85; }
+
+  .admin-btn {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--gold) !important;
+    padding: 0.45rem 1.1rem;
+    border-radius: 4px;
+    font-size: 0.82rem !important;
+    cursor: pointer;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: var(--nav-h) 5vw 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 700px; height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,77,0,0.18) 0%, transparent 70%);
+    top: -100px; right: -150px;
+    pointer-events: none;
+  }
+
+  .hero-glow2 {
+    position: absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245,200,66,0.1) 0%, transparent 70%);
+    bottom: -100px; left: -100px;
+    pointer-events: none;
+  }
+
+  .hero-content {
+    max-width: 680px;
+    animation: fadeUp 0.9s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,77,0,0.12);
+    border: 1px solid rgba(255,77,0,0.3);
+    color: var(--accent);
+    padding: 0.35rem 1rem;
+    border-radius: 100px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 7px; height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.4); }
+  }
+
+  .hero-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 9vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+  }
+
+  .hero-name span {
+    background: linear-gradient(135deg, var(--accent), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-subtitle {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #b0adb8;
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff;
+    padding: 0.85rem 2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 30px rgba(255,77,0,0.3);
+  }
+
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 45px rgba(255,77,0,0.5); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--text);
+    padding: 0.85rem 2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+  .hero-stats {
+    display: flex; gap: 3rem;
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .stat-item h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    background: linear-gradient(135deg, var(--accent), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+  }
+
+  .stat-item p { font-size: 0.82rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 7rem 5vw; }
+
+  .section-label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .section-sub {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 500px;
+    margin-bottom: 3.5rem;
+  }
+
+  /* ── SERVICES ── */
+  #services { background: var(--surface); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5px;
+  }
+
+  .service-card {
+    background: var(--card);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+    cursor: default;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s;
+  }
+
+  .service-card:hover { transform: translateY(-4px); }
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-icon {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+  }
+
+  .service-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.65; }
+
+  /* ── PORTFOLIO ── */
+  #portfolio {}
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .portfolio-card {
+    background: var(--card);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .portfolio-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+
+  .portfolio-img {
+    height: 200px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .portfolio-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,77,0,0.15), rgba(245,200,66,0.1));
+  }
+
+  .portfolio-info { padding: 1.5rem; }
+
+  .portfolio-tag {
+    display: inline-block;
+    background: rgba(255,77,0,0.15);
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.25rem 0.7rem;
+    border-radius: 3px;
+    margin-bottom: 0.7rem;
+  }
+
+  .portfolio-info h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .portfolio-info p { font-size: 0.87rem; color: var(--muted); line-height: 1.6; }
+
+  .portfolio-metrics {
+    display: flex; gap: 1.2rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .metric { font-size: 0.8rem; }
+  .metric strong { display: block; color: var(--gold); font-weight: 700; font-size: 0.95rem; }
+  .metric span { color: var(--muted); }
+
+  /* ── ABOUT ── */
+  #about { background: var(--surface); }
+
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  }
+
+  .about-img-block {
+    position: relative;
+  }
+
+  .about-img-placeholder {
+    width: 100%; aspect-ratio: 4/5;
+    background: linear-gradient(135deg, var(--card) 0%, #1f1f30 100%);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 6rem;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-img-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,77,0,0.08), rgba(245,200,66,0.05));
+  }
+
+  .about-badge {
+    position: absolute;
+    bottom: -20px; right: -20px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(255,77,0,0.4);
+  }
+
+  .about-badge h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .about-badge p { font-size: 0.75rem; font-weight: 600; opacity: 0.9; }
+
+  .skills-list {
+    display: flex; flex-wrap: wrap; gap: 0.6rem;
+    margin-top: 1.5rem;
+  }
+
+  .skill-tag {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    font-size: 0.82rem;
+    font-weight: 500;
+  }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials {}
+
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;
+  }
+
+  .testimonial-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 1rem; right: 1.5rem;
+    font-family: 'DM Serif Display', serif;
+    font-size: 5rem;
+    color: var(--accent);
+    opacity: 0.2;
+    line-height: 1;
+  }
+
+  .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem; }
+
+  .testimonial-card p { color: #c0bdc8; font-size: 0.92rem; line-height: 1.7; margin-bottom: 1.5rem; }
+
+  .testimonial-author { display: flex; align-items: center; gap: 0.8rem; }
+
+  .author-avatar {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--gold));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1rem;
+  }
+
+  .author-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+
+  .author-info h4 { font-size: 0.92rem; font-weight: 600; }
+  .author-info p { font-size: 0.78rem; color: var(--muted); }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--surface); }
+
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start; }
+
+  .contact-info { }
+
+  .contact-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+
+  .contact-icon {
+    width: 44px; height: 44px;
+    background: rgba(255,77,0,0.12);
+    border: 1px solid rgba(255,77,0,0.25);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .contact-item h4 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 0.3rem; }
+  .contact-item p { font-size: 0.95rem; color: var(--text); }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .form-group label { font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
+
+  .form-group input, .form-group textarea, .form-group select {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+    outline: none;
+    width: 100%;
+  }
+
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+    border-color: var(--accent);
+  }
+
+  .form-group textarea { min-height: 120px; resize: vertical; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    padding: 3rem 5vw;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+
+  footer .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+    background: linear-gradient(135deg, var(--accent), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  footer p { color: var(--muted); font-size: 0.85rem; }
+
+  .social-links { display: flex; gap: 1rem; }
+
+  .social-link {
+    width: 38px; height: 38px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .social-link:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── ADMIN LOGIN MODAL ── */
+  #loginModal {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(12px);
+    z-index: 9000;
+    align-items: center; justify-content: center;
+  }
+
+  #loginModal.open { display: flex; }
+
+  .login-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 3rem;
+    width: 100%;
+    max-width: 400px;
+    animation: scaleIn 0.3s ease;
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .login-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, var(--accent), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 0.3rem;
+  }
+
+  .login-subtitle { text-align: center; color: var(--muted); font-size: 0.88rem; margin-bottom: 2rem; }
+
+  .login-form { display: flex; flex-direction: column; gap: 1rem; }
+
+  .login-form input {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .login-form input:focus { border-color: var(--accent); }
+
+  .login-error {
+    color: #ff6b6b;
+    font-size: 0.83rem;
+    text-align: center;
+    display: none;
+  }
+
+  .login-close {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+  .login-close:hover { color: var(--text); }
+
+  /* ── ADMIN DASHBOARD ── */
+  #adminPanel {
+    display: none;
+    position: fixed; inset: 0;
+    z-index: 8000;
+    background: #0c0c14;
+    overflow: auto;
+  }
+
+  #adminPanel.open { display: block; }
+
+  .admin-layout { display: flex; min-height: 100vh; }
+
+  .admin-sidebar {
+    width: 240px;
+    background: #111118;
+    border-right: 1px solid var(--border);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0; height: 100vh;
+    overflow-y: auto;
+    flex-shrink: 0;
+  }
+
+  .admin-sidebar-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, var(--accent), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .admin-sidebar-sub { font-size: 0.72rem; color: var(--muted); padding: 0 1.5rem; margin-bottom: 2rem; }
+
+  .sidebar-section { margin-bottom: 0.5rem; }
+
+  .sidebar-section-title {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--muted);
+    padding: 0 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .sidebar-item {
+    display: flex; align-items: center; gap: 0.7rem;
+    padding: 0.65rem 1.5rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    border-left: 3px solid transparent;
+  }
+
+  .sidebar-item:hover { background: rgba(255,255,255,0.04); color: var(--text); }
+  .sidebar-item.active { background: rgba(255,77,0,0.1); color: var(--accent); border-left-color: var(--accent); }
+
+  .admin-main {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+  }
+
+  .admin-topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  .admin-topbar h1 { font-size: 1.4rem; font-weight: 700; }
+  .admin-topbar p { color: var(--muted); font-size: 0.88rem; }
+
+  .admin-exit {
+    background: rgba(255,77,0,0.12);
+    border: 1px solid rgba(255,77,0,0.3);
+    color: var(--accent);
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .admin-exit:hover { background: rgba(255,77,0,0.22); }
+
+  /* Admin Tab Panels */
+  .admin-tab { display: none; }
+  .admin-tab.active { display: block; }
+
+  /* Dashboard Stats */
+  .stats-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem;
+  }
+
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+
+  .stat-card .stat-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 0.5rem; }
+  .stat-card .stat-value { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; line-height: 1; }
+  .stat-card .stat-change { font-size: 0.78rem; color: #4ade80; margin-top: 0.3rem; }
+
+  /* Admin Editor */
+  .admin-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .admin-card h3 {
+    font-size: 1rem; font-weight: 700; margin-bottom: 1.3rem;
+    padding-bottom: 0.8rem; border-bottom: 1px solid var(--border);
+  }
+
+  .admin-field { margin-bottom: 1rem; }
+
+  .admin-field label {
+    display: block;
+    font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.5px; color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+
+  .admin-field input, .admin-field textarea, .admin-field select {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.92rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .admin-field input:focus, .admin-field textarea:focus { border-color: var(--accent); }
+  .admin-field textarea { min-height: 90px; resize: vertical; }
+
+  .admin-field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .save-btn {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.8rem;
+    border-radius: 6px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .save-btn:hover { opacity: 0.85; }
+
+  .cancel-btn {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 0.7rem 1.4rem;
+    border-radius: 6px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    transition: color 0.2s;
+  }
+
+  .cancel-btn:hover { color: var(--text); }
+
+  /* Item List */
+  .item-list { display: flex; flex-direction: column; gap: 0.7rem; }
+
+  .item-row {
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+  }
+
+  .item-row-info h4 { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.2rem; }
+  .item-row-info p { font-size: 0.8rem; color: var(--muted); }
+
+  .item-actions { display: flex; gap: 0.5rem; }
+
+  .edit-btn {
+    background: rgba(255,255,255,0.07);
+    border: none;
+    color: var(--text);
+    padding: 0.4rem 0.9rem;
+    border-radius: 5px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .edit-btn:hover { background: rgba(255,255,255,0.12); }
+
+  .del-btn {
+    background: rgba(255,77,77,0.1);
+    border: none;
+    color: #ff6b6b;
+    padding: 0.4rem 0.9rem;
+    border-radius: 5px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .del-btn:hover { background: rgba(255,77,77,0.2); }
+
+  .add-btn {
+    background: rgba(255,77,0,0.12);
+    border: 1px dashed rgba(255,77,0,0.3);
+    color: var(--accent);
+    padding: 0.7rem;
+    border-radius: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 0.7rem;
+    transition: background 0.2s;
+  }
+
+  .add-btn:hover { background: rgba(255,77,0,0.2); }
+
+  /* Color picker row */
+  .color-row { display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap; }
+
+  .color-swatch {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+
+  .color-swatch:hover { transform: scale(1.15); }
+  .color-swatch.selected { border-color: #fff; }
+
+  /* Toast */
+  .toast {
+    position: fixed; bottom: 2rem; right: 2rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 4px solid #4ade80;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    z-index: 99999;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 0.4s, opacity 0.4s;
+  }
+
+  .toast.show { transform: translateY(0); opacity: 1; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+    .admin-sidebar { width: 200px; }
+  }
+
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .admin-layout { flex-direction: column; }
+    .admin-sidebar { width: 100%; height: auto; position: static; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" id="navLogo">HARISH</div>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+  <button class="admin-btn" onclick="openLogin()">⚙ Admin</button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Available for Freelance</div>
+    <h1 class="hero-name"><span id="heroName">HARISH</span><br>DIGITAL<br>MARKETER</h1>
+    <p class="hero-subtitle" id="heroSubtitle">Turning clicks into conversions.</p>
+    <p class="hero-desc" id="heroDesc">I craft high-performance digital marketing strategies that drive real results — from SEO and paid ads to social media and content marketing.</p>
+    <div class="hero-actions">
+      <a href="#portfolio" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-outline">Let's Talk</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><h3 id="stat1">5+</h3><p id="statLabel1">Years Experience</p></div>
+      <div class="stat-item"><h3 id="stat2">120+</h3><p id="statLabel2">Projects Done</p></div>
+      <div class="stat-item"><h3 id="stat3">98%</h3><p id="statLabel3">Client Satisfaction</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-label">What I Do</div>
+  <div class="section-title">My Services</div>
+  <p class="section-sub" id="servicesSubtitle">Comprehensive digital marketing solutions to grow your brand and boost revenue.</p>
+  <div class="services-grid" id="servicesGrid">
+    <!-- Filled by JS -->
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="section-label">My Work</div>
+  <div class="section-title">Featured Projects</div>
+  <p class="section-sub">Hand-picked campaigns and projects that delivered exceptional results for clients.</p>
+  <div class="portfolio-grid" id="portfolioGrid">
+    <!-- Filled by JS -->
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-img-block">
+      <div class="about-img-placeholder">
+        <span>👤</span>
+      </div>
+      <div class="about-badge">
+        <h4 id="expYears">5+</h4>
+        <p id="expLabel">Years Experience</p>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">About Me</div>
+      <div class="section-title" id="aboutTitle">I'm Harish,<br>Digital Strategist</div>
+      <p style="color:var(--muted); line-height:1.8; margin-bottom:1.5rem;" id="aboutDesc">
+        With 5+ years in digital marketing, I've helped brands of all sizes grow their online presence, generate quality leads, and achieve measurable ROI through data-driven campaigns.
+      </p>
+      <p style="color:var(--muted); line-height:1.8; margin-bottom:2rem;" id="aboutDesc2">
+        I specialize in integrated digital strategies that combine SEO, PPC, social media, and content marketing to create cohesive brand experiences that convert.
+      </p>
+      <div class="skills-list" id="skillsList">
+        <!-- Filled by JS -->
+      </div>
+      <div style="margin-top:2rem;">
+        <a href="#contact" class="btn-primary">Work With Me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-label">Client Love</div>
+  <div class="section-title">What They Say</div>
+  <p class="section-sub">Don't just take my word for it — hear from people I've worked with.</p>
+  <div class="testimonials-grid" id="testimonialsGrid">
+    <!-- Filled by JS -->
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="section-label">Get In Touch</div>
+      <div class="section-title">Let's Work<br>Together</div>
+      <p style="color:var(--muted); line-height:1.75; margin-bottom:2.5rem;" id="contactDesc">Ready to grow your business? I'm always open to discussing new projects, creative ideas, or opportunities.</p>
+      <div id="contactDetails">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+    <div>
+      <div class="admin-card" style="margin-bottom:0;">
+        <h3>Send a Message</h3>
+        <div class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="John">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Doe">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="john@example.com">
+          </div>
+          <div class="form-group">
+            <label>Service Needed</label>
+            <select>
+              <option>SEO Optimization</option>
+              <option>Social Media Marketing</option>
+              <option>Google Ads / PPC</option>
+              <option>Content Marketing</option>
+              <option>Email Marketing</option>
+              <option>Full Strategy</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell me about your project..."></textarea>
+          </div>
+          <button class="btn-primary" onclick="showToast('Message sent! I\'ll get back to you soon.')">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo" id="footerLogo">HARISH</div>
+  <p id="footerText">© 2025 Harish. All rights reserved.</p>
+  <div class="social-links">
+    <a class="social-link" href="#" title="LinkedIn">in</a>
+    <a class="social-link" href="#" title="Twitter">X</a>
+    <a class="social-link" href="#" title="Instagram">📸</a>
+  </div>
+</footer>
+
+<!-- LOGIN MODAL -->
+<div id="loginModal">
+  <div class="login-box">
+    <div class="login-logo">ADMIN</div>
+    <p class="login-subtitle">Sign in to access the dashboard</p>
+    <div class="login-form">
+      <input type="text" id="loginUser" placeholder="Username" autocomplete="off">
+      <input type="password" id="loginPass" placeholder="Password">
+      <p class="login-error" id="loginError">❌ Invalid credentials. Please try again.</p>
+      <button class="btn-primary" onclick="doLogin()">Sign In</button>
+    </div>
+    <span class="login-close" onclick="closeLogin()">Cancel</span>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="adminPanel">
+  <div class="admin-layout">
+    <!-- SIDEBAR -->
+    <div class="admin-sidebar">
+      <div class="admin-sidebar-logo">ADMIN</div>
+      <p class="admin-sidebar-sub">Dashboard Panel</p>
+
+      <div class="sidebar-section">
+        <p class="sidebar-section-title">Overview</p>
+        <div class="sidebar-item active" onclick="switchTab('dashboard', this)">📊 Dashboard</div>
+        <div class="sidebar-item" onclick="switchTab('hero', this)">🏠 Hero Section</div>
+        <div class="sidebar-item" onclick="switchTab('services', this)">🔧 Services</div>
+        <div class="sidebar-item" onclick="switchTab('portfolio', this)">💼 Portfolio</div>
+        <div class="sidebar-item" onclick="switchTab('about', this)">👤 About</div>
+        <div class="sidebar-item" onclick="switchTab('testimonials', this)">⭐ Testimonials</div>
+        <div class="sidebar-item" onclick="switchTab('contact', this)">📬 Contact</div>
+      </div>
+      <div class="sidebar-section" style="margin-top:1rem;">
+        <p class="sidebar-section-title">Settings</p>
+        <div class="sidebar-item" onclick="switchTab('theme', this)">🎨 Theme & Colors</div>
+        <div class="sidebar-item" onclick="switchTab('nav', this)">🧭 Navigation</div>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="admin-main">
+      <div class="admin-topbar">
+        <div>
+          <h1>Admin Dashboard</h1>
+          <p>Welcome back, <strong>Harish</strong></p>
+        </div>
+        <button class="admin-exit" onclick="exitAdmin()">← Exit to Site</button>
+      </div>
+
+      <!-- DASHBOARD -->
+      <div class="admin-tab active" id="tab-dashboard">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <p class="stat-label">Total Visits</p>
+            <div class="stat-value" style="color:var(--accent)">2,847</div>
+            <p class="stat-change">↑ +12% this month</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-label">Messages</p>
+            <div class="stat-value" style="color:var(--gold)">34</div>
+            <p class="stat-change">↑ +5 this week</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-label">Projects</p>
+            <div class="stat-value" id="dashProjects">6</div>
+            <p class="stat-change">Active items</p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-label">Services</p>
+            <div class="stat-value" id="dashServices">6</div>
+            <p class="stat-change">Listed items</p>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3>Quick Actions</h3>
+          <div style="display:flex; gap:0.8rem; flex-wrap:wrap;">
+            <button class="save-btn" onclick="switchTab('hero', document.querySelector('[onclick=\'switchTab(\\\"hero\\\", this)\\\"\]'))">Edit Hero</button>
+            <button class="save-btn" onclick="activateTab('services')">Manage Services</button>
+            <button class="save-btn" onclick="activateTab('portfolio')">Manage Portfolio</button>
+            <button class="save-btn" onclick="activateTab('theme')">Customize Theme</button>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3>Site Info</h3>
+          <p style="color:var(--muted); font-size:0.9rem; line-height:1.7;">Your portfolio website is fully active. Use the sidebar to edit all sections. Changes are saved instantly and reflected on the live site.</p>
+        </div>
+      </div>
+
+      <!-- HERO TAB -->
+      <div class="admin-tab" id="tab-hero">
+        <div class="admin-card">
+          <h3>Hero Section</h3>
+          <div class="admin-field">
+            <label>Your Name</label>
+            <input type="text" id="edit-heroName" placeholder="HARISH">
+          </div>
+          <div class="admin-field">
+            <label>Tagline / Subtitle</label>
+            <input type="text" id="edit-heroSubtitle" placeholder="Turning clicks into conversions.">
+          </div>
+          <div class="admin-field">
+            <label>Description</label>
+            <textarea id="edit-heroDesc"></textarea>
+          </div>
+          <div class="admin-field-row">
+            <div class="admin-field">
+              <label>Stat 1 Value</label>
+              <input type="text" id="edit-stat1" placeholder="5+">
+            </div>
+            <div class="admin-field">
+              <label>Stat 1 Label</label>
+              <input type="text" id="edit-statLabel1" placeholder="Years Experience">
+            </div>
+          </div>
+          <div class="admin-field-row">
+            <div class="admin-field">
+              <label>Stat 2 Value</label>
+              <input type="text" id="edit-stat2" placeholder="120+">
+            </div>
+            <div class="admin-field">
+              <label>Stat 2 Label</label>
+              <input type="text" id="edit-statLabel2" placeholder="Projects Done">
+            </div>
+          </div>
+          <div class="admin-field-row">
+            <div class="admin-field">
+              <label>Stat 3 Value</label>
+              <input type="text" id="edit-stat3" placeholder="98%">
+            </div>
+            <div class="admin-field">
+              <label>Stat 3 Label</label>
+              <input type="text" id="edit-statLabel3" placeholder="Client Satisfaction">
+            </div>
+          </div>
+          <button class="save-btn" onclick="saveHero()">Save Changes</button>
+        </div>
+      </div>
+
+      <!-- SERVICES TAB -->
+      <div class="admin-tab" id="tab-services">
+        <div class="admin-card">
+          <h3>Services</h3>
+          <div class="item-list" id="adminServicesList"></div>
+          <button class="add-btn" onclick="addService()">+ Add New Service</button>
+        </div>
+        <div class="admin-card" id="serviceEditor" style="display:none;">
+          <h3 id="serviceEditorTitle">Edit Service</h3>
+          <div class="admin-field">
+            <label>Icon (emoji)</label>
+            <input type="text" id="svc-icon" placeholder="📱">
+          </div>
+          <div class="admin-field">
+            <label>Title</label>
+            <input type="text" id="svc-title">
+          </div>
+          <div class="admin-field">
+            <label>Description</label>
+            <textarea id="svc-desc"></textarea>
+          </div>
+          <button class="save-btn" onclick="saveService()">Save Service</button>
+          <button class="cancel-btn" onclick="cancelServiceEdit()">Cancel</button>
+        </div>
+      </div>
+
+      <!-- PORTFOLIO TAB -->
+      <div class="admin-tab" id="tab-portfolio">
+        <div class="admin-card">
+          <h3>Portfolio Projects</h3>
+          <div class="item-list" id="adminPortfolioList"></div>
+          <button class="add-btn" onclick="addProject()">+ Add New Project</button>
+        </div>
+        <div class="admin-card" id="projectEditor" style="display:none;">
+          <h3 id="projectEditorTitle">Edit Project</h3>
+          <div class="admin-field">
+            <label>Project Icon (emoji)</label>
+            <input type="text" id="proj-icon" placeholder="🚀">
+          </div>
+          <div class="admin-field">
+            <label>Tag / Category</label>
+            <input type="text" id="proj-tag" placeholder="SEO">
+          </div>
+          <div class="admin-field">
+            <label>Project Title</label>
+            <input type="text" id="proj-title">
+          </div>
+          <div class="admin-field">
+            <label>Description</label>
+            <textarea id="proj-desc"></textarea>
+          </div>
+          <div class="admin-field-row">
+            <div class="admin-field">
+              <label>Metric 1 Value</label>
+              <input type="text" id="proj-m1v" placeholder="320%">
+            </div>
+            <div class="admin-field">
+              <label>Metric 1 Label</label>
+              <input type="text" id="proj-m1l" placeholder="Traffic Increase">
+            </div>
+          </div>
+          <div class="admin-field-row">
+            <div class="admin-field">
+              <label>Metric 2 Value</label>
+              <input type="text" id="proj-m2v" placeholder="4.2x">
+            </div>
+            <div class="admin-field">
+              <label>Metric 2 Label</label>
+              <input type="text" id="proj-m2l" placeholder="ROI">
+            </div>
+          </div>
+          <button class="save-btn" onclick="saveProject()">Save Project</button>
+          <button class="cancel-btn" onclick="cancelProjectEdit()">Cancel</button>
+        </div>
+      </div>
+
+      <!-- ABOUT TAB -->
+      <div class="admin-tab" id="tab-about">
+        <div class="admin-card">
+          <h3>About Section</h3>
+          <div class="admin-field">
+            <label>Title</label>
+            <input type="text" id="edit-aboutTitle" placeholder="I'm Harish, Digital Strategist">
+          </div>
+          <div class="admin-field">
+            <label>Bio Paragraph 1</label>
+            <textarea id="edit-aboutDesc"></textarea>
+          </div>
+          <div class="admin-field">
+            <label>Bio Paragraph 2</label>
+            <textarea id="edit-aboutDesc2"></textarea>
+          </div>
+          <div class="admin-field-row">
+            <div class="admin-field">
+              <label>Experience Years</label>
+              <input type="text" id="edit-expYears" placeholder="5+">
+            </div>
+            <div class="admin-field">
+              <label>Badge Label</label>
+              <input type="text" id="edit-expLabel" placeholder="Years Experience">
+            </div>
+          </div>
+          <div class="admin-field">
+            <label>Skills (comma separated)</label>
+            <input type="text" id="edit-skills" placeholder="SEO, PPC, Social Media, Content Marketing">
+          </div>
+          <button class="save-btn" onclick="saveAbout()">Save Changes</button>
+        </div>
+      </div>
+
+      <!-- TESTIMONIALS TAB -->
+      <div class="admin-tab" id="tab-testimonials">
+        <div class="admin-card">
+          <h3>Testimonials</h3>
+          <div class="item-list" id="adminTestimonialsList"></div>
+          <button class="add-btn" onclick="addTestimonial()">+ Add Testimonial</button>
+        </div>
+        <div class="admin-card" id="testimonialEditor" style="display:none;">
+          <h3 id="testimonialEditorTitle">Edit Testimonial</h3>
+          <div class="admin-field">
+            <label>Client Name</label>
+            <input type="text" id="test-name">
+          </div>
+          <div class="admin-field">
+            <label>Client Role / Company</label>
+            <input type="text" id="test-role">
+          </div>
+          <div class="admin-field">
+            <label>Stars (1-5)</label>
+            <input type="number" id="test-stars" min="1" max="5" value="5">
+          </div>
+          <div class="admin-field">
+            <label>Testimonial Text</label>
+            <textarea id="test-text"></textarea>
+          </div>
+          <div class="admin-field">
+            <label>Avatar Initials</label>
+            <input type="text" id="test-initials" maxlength="2" placeholder="JS">
+          </div>
+          <button class="save-btn" onclick="saveTestimonial()">Save Testimonial</button>
+          <button class="cancel-btn" onclick="cancelTestimonialEdit()">Cancel</button>
+        </div>
+      </div>
+
+      <!-- CONTACT TAB -->
+      <div class="admin-tab" id="tab-contact">
+        <div class="admin-card">
+          <h3>Contact Info</h3>
+          <div class="admin-field">
+            <label>Contact Description</label>
+            <textarea id="edit-contactDesc"></textarea>
+          </div>
+          <div class="admin-field">
+            <label>Email</label>
+            <input type="text" id="edit-email" placeholder="harish@email.com">
+          </div>
+          <div class="admin-field">
+            <label>Phone</label>
+            <input type="text" id="edit-phone" placeholder="+91 98765 43210">
+          </div>
+          <div class="admin-field">
+            <label>Location</label>
+            <input type="text" id="edit-location" placeholder="Chennai, India">
+          </div>
+          <button class="save-btn" onclick="saveContact()">Save Changes</button>
+        </div>
+      </div>
+
+      <!-- THEME TAB -->
+      <div class="admin-tab" id="tab-theme">
+        <div class="admin-card">
+          <h3>Accent Color</h3>
+          <p style="color:var(--muted); font-size:0.88rem; margin-bottom:1rem;">Choose your brand's primary accent color:</p>
+          <div class="color-row" id="colorSwatches">
+            <div class="color-swatch selected" style="background:#ff4d00;" data-color="#ff4d00" onclick="setAccent('#ff4d00', '#ff9a00', this)"></div>
+            <div class="color-swatch" style="background:#6c63ff;" data-color="#6c63ff" onclick="setAccent('#6c63ff', '#a29bfe', this)"></div>
+            <div class="color-swatch" style="background:#00d2ff;" data-color="#00d2ff" onclick="setAccent('#00d2ff', '#0097ff', this)"></div>
+            <div class="color-swatch" style="background:#00b894;" data-color="#00b894" onclick="setAccent('#00b894', '#00cec9', this)"></div>
+            <div class="color-swatch" style="background:#e84393;" data-color="#e84393" onclick="setAccent('#e84393', '#fd79a8', this)"></div>
+            <div class="color-swatch" style="background:#fdcb6e;" data-color="#fdcb6e" onclick="setAccent('#fdcb6e', '#e17055', this)"></div>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3>Typography</h3>
+          <div class="admin-field">
+            <label>Display Font</label>
+            <select id="edit-fontDisplay" onchange="changeFont()">
+              <option value="'Bebas Neue', sans-serif">Bebas Neue (Current)</option>
+              <option value="'Abril Fatface', cursive">Abril Fatface</option>
+              <option value="'Playfair Display', serif">Playfair Display</option>
+              <option value="Georgia, serif">Georgia</option>
+            </select>
+          </div>
+        </div>
+        <div class="admin-card">
+          <h3>Navigation Logo Text</h3>
+          <div class="admin-field">
+            <label>Logo / Brand Name</label>
+            <input type="text" id="edit-brandName" placeholder="HARISH">
+          </div>
+          <div class="admin-field">
+            <label>Footer Text</label>
+            <input type="text" id="edit-footerText" placeholder="© 2025 Harish. All rights reserved.">
+          </div>
+          <button class="save-btn" onclick="saveBrand()">Save Brand Settings</button>
+        </div>
+      </div>
+
+      <!-- NAV TAB -->
+      <div class="admin-tab" id="tab-nav">
+        <div class="admin-card">
+          <h3>Navigation Settings</h3>
+          <p style="color:var(--muted); font-size:0.9rem; margin-bottom:1.5rem;">The navigation links are auto-generated from section IDs. You can customize the CTA button text below.</p>
+          <div class="admin-field">
+            <label>CTA Button Text</label>
+            <input type="text" id="edit-ctaText" placeholder="Hire Me">
+          </div>
+          <button class="save-btn" onclick="saveNav()">Save</button>
+        </div>
+      </div>
+
+    </div><!-- /admin-main -->
+  </div><!-- /admin-layout -->
+</div><!-- /adminPanel -->
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ─────────────────────────────────────────
+// DATA STORE
+// ─────────────────────────────────────────
+let data = {
+  hero: {
+    name: 'HARISH',
+    subtitle: 'Turning clicks into conversions.',
+    desc: "I craft high-performance digital marketing strategies that drive real results — from SEO and paid ads to social media and content marketing.",
+    stat1: '5+', statLabel1: 'Years Experience',
+    stat2: '120+', statLabel2: 'Projects Done',
+    stat3: '98%', statLabel3: 'Client Satisfaction'
+  },
+  about: {
+    title: "I'm Harish,\nDigital Strategist",
+    desc: "With 5+ years in digital marketing, I've helped brands of all sizes grow their online presence, generate quality leads, and achieve measurable ROI through data-driven campaigns.",
+    desc2: "I specialize in integrated digital strategies that combine SEO, PPC, social media, and content marketing to create cohesive brand experiences that convert.",
+    expYears: '5+',
+    expLabel: 'Years Experience',
+    skills: ['SEO Optimization','Google Ads (PPC)','Social Media Marketing','Content Strategy','Email Marketing','Analytics & Reporting','Brand Identity','Conversion Rate Optimization']
+  },
+  contact: {
+    desc: "Ready to grow your business? I'm always open to discussing new projects, creative ideas, or opportunities.",
+    email: 'harish@digitalmarketer.com',
+    phone: '+91 98765 43210',
+    location: 'Chennai, India'
+  },
+  brand: {
+    name: 'HARISH',
+    footerText: '© 2025 Harish. All rights reserved.'
+  },
+  services: [
+    { icon: '🔍', title: 'SEO Optimization', desc: 'Dominate search rankings with technical SEO, content strategy, and link-building campaigns.' },
+    { icon: '📱', title: 'Social Media Marketing', desc: 'Build engaged communities and drive conversions across Instagram, Facebook, LinkedIn & more.' },
+    { icon: '💰', title: 'Google Ads / PPC', desc: 'ROI-focused paid advertising campaigns that turn ad spend into measurable revenue.' },
+    { icon: '✍️', title: 'Content Marketing', desc: 'Compelling content that attracts, engages, and converts your target audience.' },
+    { icon: '📧', title: 'Email Marketing', desc: 'Automated email sequences and newsletters that nurture leads and retain customers.' },
+    { icon: '📊', title: 'Analytics & Strategy', desc: 'Data-driven insights and comprehensive marketing strategies tailored to your goals.' }
+  ],
+  portfolio: [
+    { icon: '🚀', tag: 'SEO', title: 'E-Commerce Traffic Surge', desc: 'Grew organic traffic by 320% in 6 months for a fashion e-commerce brand.', m1v: '320%', m1l: 'Traffic Increase', m2v: '4.2x', m2l: 'ROI' },
+    { icon: '📣', tag: 'Social Media', title: 'Brand Awareness Campaign', desc: 'Built 500K+ Instagram followers and 8% engagement rate for a lifestyle brand.', m1v: '500K+', m1l: 'Followers Gained', m2v: '8%', m2l: 'Engagement Rate' },
+    { icon: '💰', tag: 'PPC', title: 'Google Ads Overhaul', desc: 'Reduced cost-per-acquisition by 60% while doubling lead volume.', m1v: '-60%', m1l: 'CPA Reduction', m2v: '2x', m2l: 'Lead Volume' },
+    { icon: '✉️', tag: 'Email', title: 'Email Funnel Automation', desc: 'Created a 7-step drip campaign with 42% open rate and 18% conversion.', m1v: '42%', m1l: 'Open Rate', m2v: '18%', m2l: 'Conversion Rate' },
+    { icon: '📝', tag: 'Content', title: 'B2B Content Strategy', desc: 'Built a content engine generating 50+ qualified leads monthly through blogs and case studies.', m1v: '50+', m1l: 'Leads/Month', m2v: '220%', m2l: 'Blog Traffic' },
+    { icon: '🎯', tag: 'Strategy', title: 'Full Digital Transformation', desc: 'End-to-end digital marketing overhaul for a startup — from zero to 10K customers.', m1v: '10K+', m1l: 'Customers', m2v: '350%', m2l: 'Revenue Growth' }
+  ],
+  testimonials: [
+    { name: 'Priya Sharma', role: 'CEO, FashionKart', stars: 5, text: 'Harish transformed our online presence completely. Our organic traffic tripled in just 6 months and the leads have been phenomenal!', initials: 'PS' },
+    { name: 'Arjun Mehta', role: 'Founder, TechStart', stars: 5, text: 'Best digital marketer we\'ve worked with. His Google Ads strategy cut our cost per lead in half while doubling conversions.', initials: 'AM' },
+    { name: 'Divya Nair', role: 'Marketing Director, GrowBrand', stars: 5, text: 'Incredibly data-driven and creative at the same time. Our social media went from 2K to 500K followers under his management.', initials: 'DN' }
+  ]
+};
+
+let editingSvcIdx = null;
+let editingProjIdx = null;
+let editingTestiIdx = null;
+
+// ─────────────────────────────────────────
+// RENDER FUNCTIONS
+// ─────────────────────────────────────────
+function renderAll() {
+  renderHero();
+  renderServices();
+  renderPortfolio();
+  renderAbout();
+  renderTestimonials();
+  renderContact();
+  renderBrand();
+}
+
+function renderHero() {
+  const h = data.hero;
+  document.getElementById('heroName').textContent = h.name;
+  document.getElementById('heroSubtitle').textContent = h.subtitle;
+  document.getElementById('heroDesc').textContent = h.desc;
+  document.getElementById('stat1').textContent = h.stat1;
+  document.getElementById('statLabel1').textContent = h.statLabel1;
+  document.getElementById('stat2').textContent = h.stat2;
+  document.getElementById('statLabel2').textContent = h.statLabel2;
+  document.getElementById('stat3').textContent = h.stat3;
+  document.getElementById('statLabel3').textContent = h.statLabel3;
+}
+
+function renderServices() {
+  const grid = document.getElementById('servicesGrid');
+  grid.innerHTML = data.services.map(s => `
+    <div class="service-card">
+      <div class="service-icon">${s.icon}</div>
+      <h3>${s.title}</h3>
+      <p>${s.desc}</p>
+    </div>
+  `).join('');
+  document.getElementById('dashServices').textContent = data.services.length;
+}
+
+function renderPortfolio() {
+  const grid = document.getElementById('portfolioGrid');
+  grid.innerHTML = data.portfolio.map(p => `
+    <div class="portfolio-card">
+      <div class="portfolio-img">${p.icon}</div>
+      <div class="portfolio-info">
+        <span class="portfolio-tag">${p.tag}</span>
+        <h3>${p.title}</h3>
+        <p>${p.desc}</p>
+        <div class="portfolio-metrics">
+          <div class="metric"><strong>${p.m1v}</strong><span>${p.m1l}</span></div>
+          <div class="metric"><strong>${p.m2v}</strong><span>${p.m2l}</span></div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  document.getElementById('dashProjects').textContent = data.portfolio.length;
+}
+
+function renderAbout() {
+  const a = data.about;
+  document.getElementById('aboutTitle').innerHTML = a.title.replace('\n', '<br>');
+  document.getElementById('aboutDesc').textContent = a.desc;
+  document.getElementById('aboutDesc2').textContent = a.desc2;
+  document.getElementById('expYears').textContent = a.expYears;
+  document.getElementById('expLabel').textContent = a.expLabel;
+  document.getElementById('skillsList').innerHTML = a.skills.map(s => `<span class="skill-tag">${s}</span>`).join('');
+}
+
+function renderTestimonials() {
+  const grid = document.getElementById('testimonialsGrid');
+  grid.innerHTML = data.testimonials.map(t => `
+    <div class="testimonial-card">
+      <div class="stars">${'★'.repeat(t.stars)}${'☆'.repeat(5 - t.stars)}</div>
+      <p>${t.text}</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">${t.initials}</div>
+        <div class="author-info"><h4>${t.name}</h4><p>${t.role}</p></div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderContact() {
+  const c = data.contact;
+  document.getElementById('contactDesc').textContent = c.desc;
+  document.getElementById('contactDetails').innerHTML = `
+    <div class="contact-item"><div class="contact-icon">✉️</div><div><h4>Email</h4><p>${c.email}</p></div></div>
+    <div class="contact-item"><div class="contact-icon">📞</div><div><h4>Phone</h4><p>${c.phone}</p></div></div>
+    <div class="contact-item"><div class="contact-icon">📍</div><div><h4>Location</h4><p>${c.location}</p></div></div>
+  `;
+}
+
+function renderBrand() {
+  const b = data.brand;
+  document.getElementById('navLogo').textContent = b.name;
+  document.getElementById('footerLogo').textContent = b.name;
+  document.getElementById('footerText').textContent = b.footerText;
+}
+
+// ─────────────────────────────────────────
+// ADMIN LIST RENDERS
+// ─────────────────────────────────────────
+function renderAdminServices() {
+  document.getElementById('adminServicesList').innerHTML = data.services.map((s, i) => `
+    <div class="item-row">
+      <div class="item-row-info">
+        <h4>${s.icon} ${s.title}</h4>
+        <p>${s.desc.substring(0, 60)}...</p>
+      </div>
+      <div class="item-actions">
+        <button class="edit-btn" onclick="editService(${i})">Edit</button>
+        <button class="del-btn" onclick="deleteService(${i})">Delete</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderAdminPortfolio() {
+  document.getElementById('adminPortfolioList').innerHTML = data.portfolio.map((p, i) => `
+    <div class="item-row">
+      <div class="item-row-info">
+        <h4>${p.icon} ${p.title}</h4>
+        <p>${p.tag} · ${p.m1v} ${p.m1l}</p>
+      </div>
+      <div class="item-actions">
+        <button class="edit-btn" onclick="editProject(${i})">Edit</button>
+        <button class="del-btn" onclick="deleteProject(${i})">Delete</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function renderAdminTestimonials() {
+  document.getElementById('adminTestimonialsList').innerHTML = data.testimonials.map((t, i) => `
+    <div class="item-row">
+      <div class="item-row-info">
+        <h4>${t.name}</h4>
+        <p>${t.role} · ${'★'.repeat(t.stars)}</p>
+      </div>
+      <div class="item-actions">
+        <button class="edit-btn" onclick="editTestimonial(${i})">Edit</button>
+        <button class="del-btn" onclick="deleteTestimonial(${i})">Delete</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ─────────────────────────────────────────
+// LOGIN
+// ─────────────────────────────────────────
+function openLogin() { document.getElementById('loginModal').classList.add('open'); }
+function closeLogin() { document.getElementById('loginModal').classList.remove('open'); }
+
+function doLogin() {
+  const u = document.getElementById('loginUser').value.trim();
+  const p = document.getElementById('loginPass').value.trim();
+  if (u === 'HARISH' && p === 'HARI') {
+    closeLogin();
+    openAdmin();
+  } else {
+    document.getElementById('loginError').style.display = 'block';
+  }
+}
+
+document.getElementById('loginUser').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+document.getElementById('loginPass').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+
+// ─────────────────────────────────────────
+// ADMIN PANEL
+// ─────────────────────────────────────────
+function openAdmin() {
+  document.getElementById('adminPanel').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  populateAdminFields();
+  renderAdminServices();
+  renderAdminPortfolio();
+  renderAdminTestimonials();
+}
+
+function exitAdmin() {
+  document.getElementById('adminPanel').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function activateTab(name) {
+  document.querySelectorAll('.sidebar-item').forEach(el => {
+    if (el.getAttribute('onclick') && el.getAttribute('onclick').includes(`'${name}'`)) {
+      switchTab(name, el);
+    }
+  });
+}
+
+function switchTab(name, el) {
+  document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.sidebar-item').forEach(s => s.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  if (el) el.classList.add('active');
+}
+
+function populateAdminFields() {
+  const h = data.hero;
+  document.getElementById('edit-heroName').value = h.name;
+  document.getElementById('edit-heroSubtitle').value = h.subtitle;
+  document.getElementById('edit-heroDesc').value = h.desc;
+  document.getElementById('edit-stat1').value = h.stat1;
+  document.getElementById('edit-statLabel1').value = h.statLabel1;
+  document.getElementById('edit-stat2').value = h.stat2;
+  document.getElementById('edit-statLabel2').value = h.statLabel2;
+  document.getElementById('edit-stat3').value = h.stat3;
+  document.getElementById('edit-statLabel3').value = h.statLabel3;
+
+  const a = data.about;
+  document.getElementById('edit-aboutTitle').value = a.title;
+  document.getElementById('edit-aboutDesc').value = a.desc;
+  document.getElementById('edit-aboutDesc2').value = a.desc2;
+  document.getElementById('edit-expYears').value = a.expYears;
+  document.getElementById('edit-expLabel').value = a.expLabel;
+  document.getElementById('edit-skills').value = a.skills.join(', ');
+
+  const c = data.contact;
+  document.getElementById('edit-contactDesc').value = c.desc;
+  document.getElementById('edit-email').value = c.email;
+  document.getElementById('edit-phone').value = c.phone;
+  document.getElementById('edit-location').value = c.location;
+
+  document.getElementById('edit-brandName').value = data.brand.name;
+  document.getElementById('edit-footerText').value = data.brand.footerText;
+}
+
+// ─────────────────────────────────────────
+// SAVE FUNCTIONS
+// ─────────────────────────────────────────
+function saveHero() {
+  data.hero = {
+    name: v('edit-heroName'),
+    subtitle: v('edit-heroSubtitle'),
+    desc: v('edit-heroDesc'),
+    stat1: v('edit-stat1'), statLabel1: v('edit-statLabel1'),
+    stat2: v('edit-stat2'), statLabel2: v('edit-statLabel2'),
+    stat3: v('edit-stat3'), statLabel3: v('edit-statLabel3')
+  };
+  renderHero();
+  showToast('Hero section updated!');
+}
+
+function saveAbout() {
+  data.about = {
+    title: v('edit-aboutTitle'),
+    desc: v('edit-aboutDesc'),
+    desc2: v('edit-aboutDesc2'),
+    expYears: v('edit-expYears'),
+    expLabel: v('edit-expLabel'),
+    skills: v('edit-skills').split(',').map(s => s.trim()).filter(Boolean)
+  };
+  renderAbout();
+  showToast('About section updated!');
+}
+
+function saveContact() {
+  data.contact = {
+    desc: v('edit-contactDesc'),
+    email: v('edit-email'),
+    phone: v('edit-phone'),
+    location: v('edit-location')
+  };
+  renderContact();
+  showToast('Contact info updated!');
+}
+
+function saveBrand() {
+  data.brand = { name: v('edit-brandName'), footerText: v('edit-footerText') };
+  renderBrand();
+  showToast('Brand settings saved!');
+}
+
+function saveNav() {
+  const cta = v('edit-ctaText');
+  if (cta) {
+    document.querySelector('.nav-cta').textContent = cta;
+  }
+  showToast('Navigation updated!');
+}
+
+// ─────────────────────────────────────────
+// SERVICES CRUD
+// ─────────────────────────────────────────
+function editService(i) {
+  editingSvcIdx = i;
+  const s = data.services[i];
+  document.getElementById('svc-icon').value = s.icon;
+  document.getElementById('svc-title').value = s.title;
+  document.getElementById('svc-desc').value = s.desc;
+  document.getElementById('serviceEditorTitle').textContent = 'Edit Service';
+  document.getElementById('serviceEditor').style.display = 'block';
+}
+
+function addService() {
+  editingSvcIdx = null;
+  document.getElementById('svc-icon').value = '';
+  document.getElementById('svc-title').value = '';
+  document.getElementById('svc-desc').value = '';
+  document.getElementById('serviceEditorTitle').textContent = 'Add New Service';
+  document.getElementById('serviceEditor').style.display = 'block';
+}
+
+function saveService() {
+  const svc = { icon: v('svc-icon') || '⭐', title: v('svc-title'), desc: v('svc-desc') };
+  if (!svc.title) return;
+  if (editingSvcIdx === null) data.services.push(svc);
+  else data.services[editingSvcIdx] = svc;
+  renderServices();
+  renderAdminServices();
+  cancelServiceEdit();
+  showToast('Service saved!');
+}
+
+function deleteService(i) {
+  data.services.splice(i, 1);
+  renderServices();
+  renderAdminServices();
+  showToast('Service deleted.');
+}
+
+function cancelServiceEdit() {
+  document.getElementById('serviceEditor').style.display = 'none';
+  editingSvcIdx = null;
+}
+
+// ─────────────────────────────────────────
+// PORTFOLIO CRUD
+// ─────────────────────────────────────────
+function editProject(i) {
+  editingProjIdx = i;
+  const p = data.portfolio[i];
+  document.getElementById('proj-icon').value = p.icon;
+  document.getElementById('proj-tag').value = p.tag;
+  document.getElementById('proj-title').value = p.title;
+  document.getElementById('proj-desc').value = p.desc;
+  document.getElementById('proj-m1v').value = p.m1v;
+  document.getElementById('proj-m1l').value = p.m1l;
+  document.getElementById('proj-m2v').value = p.m2v;
+  document.getElementById('proj-m2l').value = p.m2l;
+  document.getElementById('projectEditorTitle').textContent = 'Edit Project';
+  document.getElementById('projectEditor').style.display = 'block';
+}
+
+function addProject() {
+  editingProjIdx = null;
+  ['proj-icon','proj-tag','proj-title','proj-desc','proj-m1v','proj-m1l','proj-m2v','proj-m2l'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('projectEditorTitle').textContent = 'Add New Project';
+  document.getElementById('projectEditor').style.display = 'block';
+}
+
+function saveProject() {
+  const proj = {
+    icon: v('proj-icon') || '🚀',
+    tag: v('proj-tag'),
+    title: v('proj-title'),
+    desc: v('proj-desc'),
+    m1v: v('proj-m1v'), m1l: v('proj-m1l'),
+    m2v: v('proj-m2v'), m2l: v('proj-m2l')
+  };
+  if (!proj.title) return;
+  if (editingProjIdx === null) data.portfolio.push(proj);
+  else data.portfolio[editingProjIdx] = proj;
+  renderPortfolio();
+  renderAdminPortfolio();
+  cancelProjectEdit();
+  showToast('Project saved!');
+}
+
+function deleteProject(i) {
+  data.portfolio.splice(i, 1);
+  renderPortfolio();
+  renderAdminPortfolio();
+  showToast('Project deleted.');
+}
+
+function cancelProjectEdit() {
+  document.getElementById('projectEditor').style.display = 'none';
+  editingProjIdx = null;
+}
+
+// ─────────────────────────────────────────
+// TESTIMONIALS CRUD
+// ─────────────────────────────────────────
+function editTestimonial(i) {
+  editingTestiIdx = i;
+  const t = data.testimonials[i];
+  document.getElementById('test-name').value = t.name;
+  document.getElementById('test-role').value = t.role;
+  document.getElementById('test-stars').value = t.stars;
+  document.getElementById('test-text').value = t.text;
+  document.getElementById('test-initials').value = t.initials;
+  document.getElementById('testimonialEditorTitle').textContent = 'Edit Testimonial';
+  document.getElementById('testimonialEditor').style.display = 'block';
+}
+
+function addTestimonial() {
+  editingTestiIdx = null;
+  ['test-name','test-role','test-text','test-initials'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('test-stars').value = 5;
+  document.getElementById('testimonialEditorTitle').textContent = 'Add Testimonial';
+  document.getElementById('testimonialEditor').style.display = 'block';
+}
+
+function saveTestimonial() {
+  const t = {
+    name: v('test-name'), role: v('test-role'),
+    stars: parseInt(v('test-stars')) || 5,
+    text: v('test-text'),
+    initials: v('test-initials') || '??'
+  };
+  if (!t.name) return;
+  if (editingTestiIdx === null) data.testimonials.push(t);
+  else data.testimonials[editingTestiIdx] = t;
+  renderTestimonials();
+  renderAdminTestimonials();
+  cancelTestimonialEdit();
+  showToast('Testimonial saved!');
+}
+
+function deleteTestimonial(i) {
+  data.testimonials.splice(i, 1);
+  renderTestimonials();
+  renderAdminTestimonials();
+  showToast('Testimonial deleted.');
+}
+
+function cancelTestimonialEdit() {
+  document.getElementById('testimonialEditor').style.display = 'none';
+  editingTestiIdx = null;
+}
+
+// ─────────────────────────────────────────
+// THEME
+// ─────────────────────────────────────────
+function setAccent(color, color2, el) {
+  document.documentElement.style.setProperty('--accent', color);
+  document.documentElement.style.setProperty('--accent2', color2);
+  document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('selected'));
+  el.classList.add('selected');
+  showToast('Accent color updated!');
+}
+
+function changeFont() {
+  const f = document.getElementById('edit-fontDisplay').value;
+  document.documentElement.style.setProperty('--display-font', f);
+  document.querySelectorAll('.hero-name, .section-title, .nav-logo, .stat-item h3').forEach(el => {
+    el.style.fontFamily = f;
+  });
+  showToast('Font updated!');
+}
+
+// ─────────────────────────────────────────
+// HELPERS
+// ─────────────────────────────────────────
+function v(id) { return document.getElementById(id).value.trim(); }
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = '✓ ' + msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// ─────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────
+renderAll();
+</script>
+</body>
+</html>
